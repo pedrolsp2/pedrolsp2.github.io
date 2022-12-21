@@ -37,9 +37,9 @@
             $status = "Indisponivel";
             $fraseStatus = "Proxima partida em";
         }else{
-            $retorna = 0;
-            $datafinal = 0;
-            $DuracaoPartidaFinal = 0;
+            $retorna = "";
+        $datafinal = "";
+            $DuracaoPartidaFinal = "";
             $status = "Disponivel";
             $fraseStatus = "Sem partidas cadastradas";
         }

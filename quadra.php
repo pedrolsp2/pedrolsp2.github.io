@@ -18,7 +18,7 @@
         $data = date('H:i:s');
         
         $query_sits = #"SELECT DataPartida from prereserva WHERE DataPartida >= '" . date('Y-m-d H:i:s') . "' ORDER BY DataPartida ASC limit 1";
-        "SELECT DataPartida, HorarioPartida, DuracaoPartida from partidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
+        "SELECT DataPartida, HorarioPartida, FimPartida from partidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
         $result_sits = $conn->prepare($query_sits);
         $result_sits->execute();
         
@@ -28,51 +28,21 @@
                 $dados[] = [
                     'DataPartida' => $DataPartida,
                     'HorarioPartida' => $HorarioPartida,
-                    'DuracaoPartida' => $DuracaoPartida
+                    'FimPartida' => $FimPartida
                 ];
                 $datafinal = "'$DataPartida  $HorarioPartida'";
-                $datafinal2 = "$DataPartida  $HorarioPartida";
-                $DuracaoPartidaFinal = "'$DuracaoPartida'";
+                $DuracaoPartidaFinal = "'$FimPartida'";
             }
             $retorna = $dados;
             $status = "Indisponivel";
             $fraseStatus = "Proxima partida em";
         }else{
-            $retorna = 0;
+            $retorna = "";
+        $datafinal = "";
+            $DuracaoPartidaFinal = "";
             $status = "Disponivel";
             $fraseStatus = "Sem partidas cadastradas";
-            $datafinal2 = 0;
-              $DuracaoPartida = 0;
         }
-
-        $query_separar = "select hour('$DuracaoPartida') as hora, minute('$DuracaoPartida') as minuto";
-        $result_separar = $conn->prepare($query_separar);
-        $result_separar->execute();
-        
-        if(($result_separar) and ($result_separar->rowCount() != 0)){
-            while($row_separar = $result_separar->fetch(PDO::FETCH_ASSOC)){
-                extract($row_separar);
-                $hr[] = [
-                    'hora' => $hora,
-                    'minuto' => $minuto
-                ];
-                $teste = $hr;
-            }
-        }else{
-            $teste = "Sem horario";
-        }
-        $query_soma_minuto = "SELECT date_add('$datafinal2', interval '$minuto' minute) as Tempo";
-        $result_soma_minuto = $conn->prepare($query_soma_minuto);
-        $result_soma_minuto->execute();
-       $valores = $result_soma_minuto->fetch(PDO::FETCH_ASSOC);
-        $tempo_minuto = $valores['Tempo'];
-        
-        $query_soma_hora = "SELECT date_add('$tempo_minuto', interval '$hora' hour) as Hora";
-        $result_soma_hora = $conn->prepare($query_soma_hora);
-        $result_soma_hora->execute();
-        $valoresHR = $result_soma_hora->fetch(PDO::FETCH_ASSOC);
-        $tempo_hora = $valoresHR['Hora'];
-        $HoraTerminar = "'$tempo_hora'";
     ?>
 
 <header id="header">
@@ -152,7 +122,7 @@
 
         var horario = <?php echo $datafinal; ?>;
         let to =new Date(horario);
-        var horariofim = <?php echo $HoraTerminar;?>;
+        var horariofim = <?php echo $DuracaoPartidaFinal;?>;
 		let to2 =new Date(horariofim);
             var crono = {};
                 crono.func = function update2(){
@@ -173,7 +143,7 @@
                     document.querySelector('.andamento').classList.replace('Nactive','active');
                     clearInterval(interval);
                     document.querySelector('.andamento').classList.add('alert');
-                  //  obj.func();
+                    obj.func();
                     }
 		}
         
