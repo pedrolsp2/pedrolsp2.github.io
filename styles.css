@@ -1,6 +1,6 @@
 @font-face {
 font-family: Montserrat-Regular;
-src: url(../fonts/Montserrat-Regular.ttf);
+src: url(fonts/Montserrat-Regular.ttf);
 }
 
 :root{
@@ -17,7 +17,7 @@ scroll-behavior: smooth;
 }
 
 body{
-background-image: url('../images/background.png');
+background-image: url('images/background.png');
 background-attachment: fixed;
 backface-visibility: hidden;
 }
