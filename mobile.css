@@ -135,7 +135,8 @@ main h4{
 }
 
 .barra{
-    margin: 0;
+    max-width: 1200px;
+    min-width: 1024px;
     box-sizing: border-box;
 	height: 100%;
 	display: block;
@@ -187,6 +188,8 @@ main h4{
 }
 
 .footer{
+    max-width: 1200px;
+    min-width: 1024px;
     display: block;
     padding-bottom: 250px;
 }
