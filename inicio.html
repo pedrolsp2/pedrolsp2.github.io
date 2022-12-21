@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<title>To Play &#8211; Gerenciamento de Quadras</title>
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" media="(max-width: 450px)" href="../css/mobile.css">
 	<link rel="icon" href="images/icone.ico">
 </head>
 
@@ -20,20 +21,56 @@
 	
 			<ul class="menu" role="menu">
                 <li><a href="inicio.html">Home</a></li>
-				<li><a href="partida.html">Partida</a></li>
-				<li><a href="agenda.html">Agenda</a></li>
-				<li><a href="estoque.html">Estoque</a></li>
-				<li><a href="quadras.html">Quadras</a></li> 
+				<li><a href="#">Historico</a></li> 
+				<li><a href="partida.php">Partida</a></li>
+				<li><a href="quadra.php">Quadras</a></li> 
 			</ul>
 	
 		</nav>
     </header>
+	
+    <div class="second-nave">
+        <div class="second-menu">
+            <a href="../inicio.html" id="icon-menu-inferior">
+                <div class="second-item ativo left">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+            </a>
 
-	<img src="images/msgbemvindo.png" id="bem-vindo"> 
+            <a href="../historico.html" id="icon-menu-inferior">
+                <div class="second-item">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+            </a>
+
+            <div class="second-item" id="second-logo"><img src="images/logo.png"></div>
+
+			<a href="" id="icon-menu-inferior">
+				<div class="second-item">
+				</div> 
+			</a>
+	
+			<a href="../partida.html" id="icon-menu-inferior">
+				<div class="second-item">
+					<i class="fa-solid fa-user-plus"></i>
+				</div> 
+			</a>
+	
+			<a href="" id="icon-menu-inferior">
+				<div class="second-item rigth">
+					<i class="fa-solid fa-futbol"></i>
+				</div>
+			</a>
+	
+		</div>
+    </div>
 
 <main>
-
-	<h2>Sobre o sistema.</h2>
+	<div class="area-logo">
+		<img src="images/msgbemvindo.png" id="bem-vindo">
+	</div>
+	
+	<h2 class="reveal">Sobre o sistema.</h2>
 
 	<p>&nbsp &nbsp Atualmente o número de quadras esportivas cresceram de uma forma considerável, com isso, a variedade de esportes aumentaram. Pensando nisso, desenvolvemos um software para gerenciar as partidas de jogos, estoque de materiais esportivos e sorteio de partidas para os jogos</p>
 
@@ -41,9 +78,9 @@
 
 	<p>&nbsp &nbsp Considerando as dificuldades anteriormente apresentadas, o presente projeto visa desenvolver um software para gerenciar os serviços realizados pelas empresas, em que os horários são agendados, terá o controle de estoque de materiais e também fará sorteios das partidas. Com a implementação desse software, as empresas devem conseguir se organizar melhor e oferecer um serviço melhor para seus clientes, fazendo-lhes admirarem a empresa e passarem a recomendar essa empresa aos seus círculos de convívios.</p>
 
-	<h2>Objetivos</h2>
+	<h2 class="reveal">Objetivos</h2>
 
-	<p>&nbsp &nbsp Com o propósito de administrar a locação de quadras e centros esportivos, a ToPlay quer fazer isso de modo intuitivo e simples:</p>
+	<p>&nbsp &nbsp Com o propósito de administrar a locação de quadras e centros esportivos, a ToPlay quer fazer isso de modo intuitivo e simples:</p><br>
 
 	<ol>
 		<li>Reservar horários de quadras para jogos,</li>
@@ -54,7 +91,7 @@
 
 		<p></p>
 
-<section class="container">
+<section class="container reveal">
 	<div class="bloco" id="iconblock"><i class="fa-solid fa-clock"></i>
 
 	<a id="blocktitle">Horários</a>
@@ -96,10 +133,10 @@
 	</div> 
 </section>
 
-	<h2>Funcionalidades</h2>
+	<h2 class="reveal">Funcionalidades</h2>
 
 	<p>Como o sistema tem como objetivo gerenciar quadras e horários esportivos, seus funcionalidas são básicas no momento.</p>
-	<p>Primeiro, iremos falar sobre a tela inicial, onde há todos os atalhos e botões que interagem com o usuário. Nela também, consta o status da quadra, nela, há 3 situações, são elas:</p>
+	<p>Primeiro, iremos falar sobre a tela inicial, onde há todos os atalhos e botões que interagem com o usuário. Nela também, consta o status da quadra, nela, há 3 situações, são elas:<br><br></p>
 
 		<ol>
 			<li>Quado há uma partida em andamento. Você consegue ver quanto tempo falta para acabar a mesma, e adcionar acrescimos de tempo.</li>
@@ -108,27 +145,29 @@
 
 		</ol>
 
-	<div class="principal">
+	<div class="principal reveal">
 		<div id="item">
 			<img src="images/inicial.jpeg" id="img">
 		</div>
 			<div id="item" >
-				<h4>Tela 1. Principal</h4>
+				<h4>Tela 1. Principal</h4><br>
 
 				<p>Aqui se encontra as principais inforações. Base para tudo, a tela principal se encontra com a logo da empresa, logo essa que pode ser mudada a escolha do cliente.
-					
-				Encontra-se também, botões funcionais a qual leva para as telas de ações, onde é feito toda reserva, controle de estoque, etc</p>
-
+					<br>
+					<br>
+				Encontra-se também, botões funcionais a qual leva para as telas de ações, onde é feito toda reserva, controle de estoque, etc
+				<br>
+				<br>
 				Mais abaixo, como já dito, encontra o icone da quadra, com status dinamico de acordo com o status e a disponibilidade da quadra e do horário.</p>
 			</div>
 	</div>
 </main>
-	<section class="barra">
+	<section class="barra reveal">
 
 		<div class="quadrado">
 			<h4>QUADRA</h4>
 			<h5>Costumize suas Quadras</h5>
-			<img src="images/quadra.png" id="imgquadrado">
+			<img src="images/quadra.png" id="imgquadrado2">
 		</div>
 		
 		<div class="quadrado">
@@ -149,10 +188,10 @@
 			<img src="images/estoque.jpeg" id="imgquadrado" >
 		</div>
 	</section>
-<main>
-	<div class="principal">
+	<main>
+	<div class="principal reveal">
 			<div id="item" >
-				<h4>Tela 2. Partida</h4>
+				<h4>Tela 2. Partida</h4><br>
 
 				<p>Faça os agendamentos e novas partidas com controle de estoque (bolas, coletes e o proprio horario).</p>
 	
@@ -163,18 +202,19 @@
 				<p>O estoque é dinamico! Ou seja, com a quantidade inicial posta no sistema, assim que se inicial a partida, a quantidade de bolas e coletes sai do estoque. Sendo assim, quando termina a partida, a mesma quantidade retorna para o estoque.</p>
 
 			</div>
-				<div id="item">
+				<div id="item"><br>
 					<img src="images/nvpartida.jpeg" id="img">
 				</div>		
 	</div>
+
 	<hr id="divisor">
-	<div class="principal">
+	<div class="principal reveal">
 				<div id="item">
 					<img src="images/agenda.jpeg" id="img">
 				</div>
 
-			<div id="item" >
-				<h4>Tela 3. Agenda</h4>
+			<div id="item" ><br>
+				<h4>Tela 3. Agenda</h4><br>
 
 				<p>Quando clicar no botão “Agenda”, o software mostrará a tela de todas as partidas agendadas, para buscar, alterar, ou excluir, basta seguir as orientações, mudando somente os dados que serão informados.</p>
 
@@ -187,34 +227,35 @@
 </main>
 
 <div class="footer">
-<div class="footerSobre"> 
-	<h3>GIMPS</h3>
+	<div class="footerSobre"> 
+		<h3>GIMPS</h3>
 
-	<p>Somos um grupo de 5 alunos do curso de Sistemas de Informações - UEMG Frutal.
-		Projeto feito inicialmente na linguagem JAVA, junto com o MySql, desenvolvido pelo NetBeans. O Grupo tinha como objetivo, criar um projeto interdiciplinar, com finalidade de estudos, e parte da grade do 1 semestre letivo no ano de 2022.</p>
-</div>
-<hr>
-<div class="footerSobre"> 
-	<h3>Contato</h3>
+		<p>Somos um grupo de 5 alunos do curso de Sistemas de Informações - UEMG Frutal.
+			Projeto feito inicialmente na linguagem JAVA, junto com o MySql, desenvolvido pelo NetBeans. O Grupo tinha como objetivo, criar um projeto interdiciplinar, com finalidade de estudos, e parte da grade do 1 semestre letivo no ano de 2022.</p>
+	</div>
+ <hr>
+	<div class="footerSobre"> 
+		<h3>Contato</h3>
 
-	<p id="pfooter"><i class="fa-solid fa-location-dot" id="iconfooter"></i>Endereço:&nbsp &nbsp</p>
-		<a>Av. Mario Palermo - nº 1000 | Frutal/MG</a>
-	<br>
+		<p id="pfooter"><i class="fa-solid fa-location-dot" id="iconfooter"></i>Endereço:&nbsp &nbsp</p>
+			<a>Av. Mario Palermo - nº 1000 | Frutal/MG</a>
+		<br>
 
-	<p id="pfooter"><i class="fa-solid fa-envelope" id="iconfooter"></i>E-mail:&nbsp  &nbsp &nbsp &nbsp</p>
-		<a>toplay@gimps.com.br</a>
-	<br>
+		<p id="pfooter"><i class="fa-solid fa-envelope" id="iconfooter"></i>E-mail:&nbsp  &nbsp &nbsp &nbsp</p>
+			<a>toplay@gimps.com.br</a>
+		<br>
 
-	<p id="pfooter"><i class="fa-solid fa-phone" id="iconfooter"></i>Telefone:&nbsp &nbsp</p>
-		<a>(34) 3421-1100</a>
-	<br>
-</div>
+		<p id="pfooter"><i class="fa-solid fa-phone" id="iconfooter"></i>Telefone:&nbsp &nbsp</p>
+			<a>(34) 3421-1100</a>
+		<br>
+	</div>
 </div> 
 
 <a href="#" class="top">&#8593;</a>
 
 
-<script src="script.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/js.js"></script>
 <script class="hide" src="js/all.min.js"></script>
 
 </body>

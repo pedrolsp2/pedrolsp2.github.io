@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>To Play &#8211; Quadras</title>
+	<title>To Play &#8211; Agenda</title>
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="images/icone.ico">
 </head>
 
@@ -16,7 +17,8 @@
 			
 			<button aria-label="Abrir Menu" id="btn-celular" aria-expanded="" aria-controls="menu" aria-haspopup="true">Menu
 				<span id="icon-menu"></span>
-			</button> 
+			</button>
+	
 			<ul class="menu" role="menu">
                 <li><a href="inicio.html">Home</a></li>
 				<li><a href="partida.html">Partida</a></li>
@@ -27,19 +29,59 @@
 	
 		</nav>
     </header>
+        <h2>Controle de Agenda</h2>
+    <div class="agenda">
+        <div class="cabecalhos">
+            <h5>Todas partidas cadastradas</h5>
+        </div>
 
-    <div class="quadra">
-        <h5 id="h5">Quadra 01</h5> 
-        <div class="imga-quadra">
-            <div id="info-quadra">
-                <h1>Disponivel</h1>
-                <p>Proxima partida em</p>
-                <h3>Sem partidas cadastradas</h3>    
+        <div class="conteudo-agenda">
+            <div class="tabela-agenda" id="data2">
+                <a id="cebacalho-tabela-agenda">Data</a>
+                <a id="esquedo"></a>
+                <div class="linha">20/10/2022</div>
             </div>
+
+            <div class="tabela-agenda">
+                <a id="cebacalho-tabela-agenda">Horário</a>
+                <div class="linha">18:52</div>
+            </div>
+
+            <div class="tabela-agenda">
+                <a id="cebacalho-tabela-agenda">Duração</a>
+                <div class="linha">01:32</div>
+            </div>
+
+            <div class="tabela-agenda">
+                <a id="cebacalho-tabela-agenda">Jogadores</a>
+                <div class="linha">16</div>
+            </div>
+
+            <div class="tabela-agenda">
+                <a id="cebacalho-tabela-agenda">Bolas</a>
+                <div class="linha">2</div>
+            </div>
+
+            <div class="tabela-agenda">
+                <a id="cebacalho-tabela-agenda">Uniformes</a>
+                <div class="linha">16</div>
+            </div>
+
+            <div class="tabela-agenda" id="preço">
+                <a id="cebacalho-tabela-agenda">Preço</a>
+                <div class="linha">R$ 20,50</div>
+                
+            </div>
+
         </div>
     </div>
+<div class="filtro">
+    <p>Filtrar por data</p>
+    
+    <input type="date" name="data" id="data" placeholder="Data" />  
 
-
+    <button>Filtrar</button>
+</div>
 <div class="footer">
     <div class="footerSobre"> 
         <h3>GIMPS</h3>
@@ -65,7 +107,7 @@
     </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script class="hide" src="js/all.min.js"></script>
     
     </body>

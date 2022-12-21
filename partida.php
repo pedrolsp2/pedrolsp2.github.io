@@ -22,7 +22,6 @@
 	
 			<ul class="menu" role="menu">
                 <li><a href="inicio.html">Home</a></li>
-				<li><a href="#">Historico</a></li> 
 				<li><a href="partida.php">Partida</a></li>
 				<li><a href="quadra.php">Quadras</a></li> 
 			</ul>
@@ -33,7 +32,7 @@
 <div class="second-nave">
 	<div class="second-menu">
 		<a href="../inicio.html" id="icon-menu-inferior">
-			<div class="second-item left">
+			<div class="second-item ativo left">
 				<i class="fa-solid fa-house"></i>
 			</div>
 		</a>
@@ -51,8 +50,8 @@
 			</div> 
 		</a>
 
-		<a href="../partida.html" id="icon-menu-inferior">
-			<div class="second-item ativo">
+		<a href="" id="icon-menu-inferior">
+			<div class="second-item">
 				<i class="fa-solid fa-user-plus"></i>
 			</div> 
 		</a>
@@ -66,7 +65,8 @@
 	</div>
 </div>
 <main>
-        <h2 id="slogan">Faça seu pré agendamento aqui!</h2>
+        <h2>Faça seu pré agendamento aqui!</h2>
+				<span id="msgAlerta"></span>
 	<div class="area-form">
 			<div class="nv-partida">
 				<h4>Partida</h4>
@@ -88,9 +88,7 @@
 					</div>
 	</div>
 				<button type="submit" id="cria-partida">Concluir</button>
-				<span id="msgAlerta"></span>
 			</form>
-			
 </main>
 <div class="footer">
 <div class="footerSobre"> 

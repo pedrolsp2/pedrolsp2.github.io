@@ -100,21 +100,26 @@ window.onload = function() {
 String.prototype.reverse = function(){
   return this.split('').reverse().join(''); 
 };
+/**//////////////////////////////////////////*
+const FormPreReserva = document.getElementById("PreReserva");
+if(FormPreReserva) {
+  FormPreReserva.addEventListener("submit", async(event) => {
+    event.preventDefault();
 
-function mascaraMoeda(campo,evento){
-  var tecla = (!evento) ? window.event.keyCode : evento.which;
-  var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
-  var resultado  = "";
-  var mascara = "R$##.###.###,##".reverse();
-  for (var x=0, y=0; x<mascara.length && y<valor.length;) {
-    if (mascara.charAt(x) != '#') {
-      resultado += mascara.charAt(x);
-      x++;
-    } else {
-      resultado += valor.charAt(y);
-      y++;
-      x++;
-    }
-  }
-  campo.value = "R$ " + resultado.reverse();
+    const dadosForm = new FormData(FormPreReserva);
+
+    const dados = await fetch("cadastrar.php",{
+      method: "POST",
+      body: dadosForm
+    });
+    const resposta = await dados.json();
+   // console.log(resposta);
+
+   if (resposta['status']) {
+    document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+    PreReserva.reset();
+} else {
+    document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+}
+});
 }

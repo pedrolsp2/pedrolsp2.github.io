@@ -2,9 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>To Play &#8211; Agenda</title>
+	<title>To Play &#8211; Estoque</title>
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" href="images/icone.ico">
 </head>
 
@@ -27,52 +28,41 @@
 			</ul>
 	
 		</nav>
-    </header>
-        <h2>Controle de Agenda</h2>
-    <div class="agenda">
-        <div class="cabecalhos">
-            <h5>Todas partidas cadastradas</h5>
+        </header>
+        <div class="principal">
+            <div id="item">
+                    <div class="estoque">
+                        <div class="cabecalhos">
+                            <h5>Histórico</h5>
+                        </div>
+                
+                        <div class="conteudo-estoque">
+                            <div class="tabela-estoque" id="data">
+                                <a id="cebacalho-tabela-estoque">Data</a>
+                                <a id="esquedo"></a>
+                            </div>
+                
+                            <div class="tabela-estoque">
+                                <a id="cebacalho-tabela-estoque">Bolas</a>
+                            </div>
+                
+                            <div class="tabela-estoque">
+                                <a id="cebacalho-tabela-estoque">Uniformes</a>
+                            </div>
+                
+                        </div>
+                    </div>
+            </div>
+                <div id="item" >
+                    <div class="estoque"> 
+                        <h5 id="h5">Estoque</h5>
+                        <input type="text" name="bola" id="bola" placeholder="Bolas"/>           
+                        <input type="text" name="coletes" id="coletes" placeholder="Coletes"/>
+                        <button>Editar</button>
+                    </div>
+                </div>
         </div>
 
-        <div class="conteudo-agenda">
-            <div class="tabela-agenda" id="data2">
-                <a id="cebacalho-tabela-agenda">Data</a>
-                <a id="esquedo"></a>
-            </div>
-
-            <div class="tabela-agenda">
-                <a id="cebacalho-tabela-agenda">Horário</a>
-            </div>
-
-            <div class="tabela-agenda">
-                <a id="cebacalho-tabela-agenda">Duração</a>
-            </div>
-
-            <div class="tabela-agenda">
-                <a id="cebacalho-tabela-agenda">Jogadores</a>
-            </div>
-
-            <div class="tabela-agenda">
-                <a id="cebacalho-tabela-agenda">Bolas</a>
-            </div>
-
-            <div class="tabela-agenda">
-                <a id="cebacalho-tabela-agenda">Uniformes</a>
-            </div>
-
-            <div class="tabela-agenda" id="preço">
-                <a id="cebacalho-tabela-agenda">Preço</a>
-            </div>
-
-        </div>
-    </div>
-<div class="filtro">
-    <p>Filtrar por data</p>
-    
-    <input type="date" name="data" id="data" placeholder="Data" />  
-
-    <button>Filtrar</button>
-</div>
 <div class="footer">
     <div class="footerSobre"> 
         <h3>GIMPS</h3>
@@ -98,7 +88,7 @@
     </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script class="hide" src="js/all.min.js"></script>
     
     </body>
