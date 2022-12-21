@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../fonts/Montserrat-Regular.ttf);
+    }
+
 main{
     padding: 0px 20px;
 }

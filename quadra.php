@@ -54,9 +54,10 @@
             <span id="icon-menu"></span>
         </button> 
         <ul class="menu" role="menu">
-                <li><a href="inicio.html">Home</a></li>
-				<li><a href="partida.php">Partida</a></li>
-				<li><a href="quadra.php">Quadras</a></li> 
+        <li><a href="../inicio.html">Home</a></li>
+				<li><a href="../historico.html">Historico</a></li> 
+				<li><a href="../partida.html">Partida</a></li>
+				<li><a href="../quadra.php">Quadras</a></li> 
         </ul>
 
     </nav>
