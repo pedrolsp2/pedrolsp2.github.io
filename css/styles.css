@@ -1,7 +1,8 @@
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/*@font-face {
 font-family: Montserrat-Regular;
 src: url(../fonts/Montserrat-Regular.ttf);
-}
+}*/
 
 :root{
 --corPrincipal:#085e3b;
@@ -11,7 +12,7 @@ src: url(../fonts/Montserrat-Regular.ttf);
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: Montserrat-Regular;
+font-family: 'Montserrat', sans-serif;
 text-align: justify;
 scroll-behavior: smooth;
 }
