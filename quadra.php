@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<title>To Play &#8211; Quadras</title>
 	<meta name="viewport" content="width=device-width">
-	<!--<link rel="stylesheet" href="css/normalize.css">-->
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" media="(max-width: 450px)" href="../css/mobile.css">
 	<link rel="icon" href="images/icone.ico">
 </head>
 

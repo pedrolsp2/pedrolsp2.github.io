@@ -192,6 +192,8 @@ main h4{
 	display: block; 
 }
 
+
+
 .footer{
     max-width: 1200px;
     min-width: 1024px;
@@ -433,3 +435,7 @@ main h4{
           color: rgb(192,152,83);
         }
         
+.manutencao img{
+    width: 110vh;
+    margin: auto;
+  }
