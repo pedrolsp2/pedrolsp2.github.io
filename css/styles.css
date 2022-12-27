@@ -535,21 +535,7 @@ button{
       #filtro  input:focus{
       border-color: #077e4e;
       }
-    
-      .alert{
-      animation: alert 1s linear infinite alternate;
-    }
-    @keyframes alert{
-      0%{
-        background: #fff;
-        color: #fff;
-      }
-      50%{
-        background: #a11;
-        color: #000;
-      }
-    }
-    
+
     .horarios{
       text-align: center;
       line-height: 90px;
@@ -632,20 +618,6 @@ color: #756767c2;;
 
 #filtro  input:focus{
 border-color: #077e4e;
-}
-
-.alert{
-animation: alert 1s linear infinite alternate;
-}
-@keyframes alert{
-0%{
-background: #fff;
-color: #fff;
-}
-50%{
-background: #a11;
-color: #000;
-}
 }
 
 .alerta{
