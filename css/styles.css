@@ -379,7 +379,7 @@ h4 {
   ;
 }
 
-input {
+input,select  {
   width: 250px;
   height: 40px;
   border-radius: 10px;
@@ -393,6 +393,10 @@ input {
   text-align: center;
   backdrop-filter: blur(9.2px);
   -webkit-backdrop-filter: blur(9.2px);
+}
+
+select-selected{
+  background-color: red;
 }
 
 input::placeholder {
@@ -628,7 +632,7 @@ button:hover {
 #filtro input::placeholder {
   font-size: 1.2rem;
   color: #756767c2;
-  ;
+
 }
 
 #filtro input:focus {
