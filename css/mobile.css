@@ -450,11 +450,6 @@ button:hover {
     color: rgb(192, 152, 83);
 }
 
-.manutencao img {
-    width: 110vh;
-    margin: auto;
-}
-
 .area-quadra {
     background-color: rgba(199, 199, 199, 0.24);
     border-radius: 50px;
@@ -507,4 +502,3 @@ button:hover {
     color: var(--corPrincipal);
     font-size: 4.5rem;
   }
-  
