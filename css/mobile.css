@@ -492,6 +492,11 @@ button:hover {
     transform: translate(-50%, 10%);
   }
   
+.quadra01 img{
+    visibility: hidden;
+    display: none;
+}
+
 #status{
     font-size: 9rem;
 }
