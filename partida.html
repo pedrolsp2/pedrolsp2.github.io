@@ -26,7 +26,7 @@
 				<li><a href="../inicio.html">Home</a></li>
 				<li><a href="../historico.html">Historico</a></li>
 				<li><a href="../partida.html">Partida</a></li>
-				<li><a href="../quadra.php">Quadras</a></li>
+				<li><a href="../quadra.html">Quadras</a></li>
 			</ul>
 
 		</nav>
@@ -73,19 +73,24 @@
 			<div class="nv-partida">
 				<h4>Partida</h4>
 				<form method="POST" id="PreReserva">
-					<input type="date" name="DataPartida" id="DataPartida"/>
+					<input type="date" name="DataPartida" id="DataPartida" />
 
-					<input type="time" name="HorarioPartida" id="HorarioPartida"/>
+					<input type="time" name="HorarioPartida" id="HorarioPartida" />
 
 					<input type="time" name="DuracaoPartida" id="DuracaoPartida" />
 
-					<div id="cx-input"><input type="text" id="NumeroJogadores" name="NumeroJogadores"
-							maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" /></input><a>Jogadores</a></div>
+					<div id="cx-input"><input type="text" id="NumeroJogadores" name="NumeroJogadores" maxlength="2"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" /></input><a>Jogadores</a>
+					</div>
 			</div>
 			<div class="nv-partida">
 				<h4>Informações</h4>
-				<input type="text" name="NumeroBolas" id="NumeroBolas" placeholder="Bolas" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2"/>
-				<input type="text" name="NumeroUniformes" id="NumeroUniformes" placeholder="Coletes" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="2"/>
+				<input type="text" name="NumeroBolas" id="NumeroBolas" placeholder="Bolas"
+					oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+					maxlength="2" />
+				<input type="text" name="NumeroUniformes" id="NumeroUniformes" placeholder="Coletes"
+					oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+					maxlength="2" />
 				<input type="text" name="NomeJogador" id="NomeJogador" placeholder="Digite seu nome" />
 				<input type="text" name="TelJogador" id="TelJogador" placeholder="Telefone para contato" />
 			</div>
@@ -93,7 +98,7 @@
 		<button onclick="AlertasPartidas()" id="cria-partida" class="alertas">Concluir</button>
 		<!--  Botao temporario
 		<button type="submit" id="cria-partida">Concluir</button>
-	-->
+		-->
 		<span id="msgAlerta"></span>
 		</form>
 
@@ -165,10 +170,10 @@
 			else if (document.getElementById("TelJogador").value == "") {
 				document.getElementById("msgAlerta").innerHTML = "<div class='alert error'><input type='checkbox' id='alert1'/><label class='close' title='close' for='alert1'><i class='fa-solid fa-circle-xmark btn-fecha'></i></label>    <p class='inner'><strong>ERRO!</strong> Necessário preencher um telefone para contato!</p></div>";
 			}
-			else{
-				document.getElementById("msgAlerta").innerHTML = "'<div class='alert success'><input type='checkbox'id='alert2'/><label class='close' title='close' for='alert2'><i class='fa-solid fa-circle-xmark btn-fecha'></i></label><p class='inner'><strong>Sucesso! </strong>Obrigado "+ nome +", Sua pré reserva foi feita com sucesso!</p></div>"
+			else {
+				document.getElementById("msgAlerta").innerHTML = "'<div class='alert success'><input type='checkbox'id='alert2'/><label class='close' title='close' for='alert2'><i class='fa-solid fa-circle-xmark btn-fecha'></i></label><p class='inner'><strong>Sucesso! </strong>Obrigado " + nome + ", Sua pré reserva foi feita com sucesso!</p></div>"
+			PreReserva.reset();
 			}
-				PreReserva.reset();
 		}
 
 	</script>
