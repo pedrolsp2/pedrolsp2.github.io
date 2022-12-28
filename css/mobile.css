@@ -197,7 +197,6 @@ main h4 {
     display: block;
 }
 
-
 .footer {
     max-width: 1200px;
     min-width: 1024px;
@@ -461,20 +460,15 @@ button:hover {
     border-radius: 50px;
     margin: 20px 0px;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
   }
-  
-  .quadra01 img {
-    height: 90vh;
-  }
-  
   .conteudo-quadra {
     width: 90%;
-    height: 80%;
+    height: 90%;
     border-radius: 80px;
     background-color: rgba(216, 216, 216, 0.932);
     position: absolute;
@@ -489,7 +483,7 @@ button:hover {
     line-height: 90px;
     width: 90%;
     height: 90px;
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: bold;
     color: var(--corPrincipal);
     position: absolute;
@@ -499,13 +493,13 @@ button:hover {
   }
   
 #status{
-    font-size: 5rem;
+    font-size: 9rem;
 }
 
   .conteudo-quadra h3 {
     margin-top: 50px;
     text-align: center;
     color: var(--corPrincipal);
-    font-size: 2.5rem;
+    font-size: 4.5rem;
   }
   
