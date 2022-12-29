@@ -306,7 +306,7 @@ main h4 {
     ;
 }
 
-input {
+input,select {
     width: 80%;
     height: 100px;
     border-radius: 10px;
@@ -321,6 +321,7 @@ input {
     backdrop-filter: blur(9.2px);
     -webkit-backdrop-filter: blur(9.2px);
 }
+
 
 input::placeholder {
     font-size: 3.2rem;
