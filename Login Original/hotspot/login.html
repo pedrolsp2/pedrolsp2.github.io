@@ -11,6 +11,38 @@
 </head>
 
 <body>
+    <div id="politica" class="politica slide-in-blurred-bottom ">
+      <button class="close" onclick="Sumir()">✖</button>
+      
+      <h1>Politica de privacidade</h1>
+      <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro quisquam corporis dolorem fuga nemo aliquid
+          repudiandae ipsum accusantium, inventore eius obcaecati nesciunt dicta repellat dolorum, a consequatur
+          minima eligendi sapiente!</h5>
+
+        <hr>
+
+      <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro quisquam corporis dolorem fuga nemo aliquid
+          repudiandae ipsum accusantium, inventore eius obcaecati nesciunt dicta repellat dolorum, a consequatur
+          minima eligendi sapiente!</h5>
+
+      <form class="checar">
+          <label for="aceito1">
+              <input type="checkbox" id="aceito1">Aceito os tremos
+          </label>
+
+          <label for="aceito2">
+              <input type="checkbox" id="aceito2">Aceito os tremos
+          </label>
+
+          <p id="menssagem-alerta" class="hide">Aceite os termos!</p>
+          <a id="saiba" href="">Saber Mais</a>
+      </form>
+
+      <div id="botoes">
+          <button onclick="Esconder()">Aceito</button>
+      </div>
+
+  </div>
             $(if chap-id)
             <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
                 <input type="hidden" name="username" />
@@ -59,6 +91,52 @@
                         $(endif)
 
                         $(if error)$(error)$(endif)
+                        
+                         <script type="text/javascript">
+
+        function Sumir() {
+            var status = false;
+            let checkbox = document.getElementById('aceito1');
+            let checkbox2 = document.getElementById('aceito2');
+            if (checkbox.checked && checkbox2.checked) {
+                status = true;
+            } else {
+                status = false;
+            }
+
+            if (status == true) {
+                var adicionar = document.getElementById("botoes");
+                adicionar.classList.add("heartbeat");
+                document.getElementById('menssagem-alerta').classList.remove("hide");
+            }
+            else {
+                var adicionar = document.getElementById("botoes");
+                adicionar.classList.add("heartbeat");
+                document.getElementById('menssagem-alerta').classList.remove("hide");
+            }
+        }
+
+        function Esconder() {
+            var status = false;
+            let checkbox = document.getElementById('aceito1');
+            let checkbox2 = document.getElementById('aceito2');
+            if (checkbox.checked && checkbox2.checked) {
+                status = true;
+            } else {
+                status = false;
+            }
+
+            if (status == true) {
+                var adicionar = document.getElementById("politica");
+                adicionar.classList.add("scale-out-center");
+            }
+            else {
+                var adicionar = document.getElementById("botoes");
+                adicionar.classList.add("heartbeat");
+                document.getElementById('menssagem-alerta').classList.remove("hide");
+            }
+        }
+    </script>
 </body>
 
 </html>
