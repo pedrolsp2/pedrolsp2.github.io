@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Logar - Grupo Queiroz</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+            $(if chap-id)
+            <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+                <input type="hidden" name="username" />
+                <input type="hidden" name="password" />
+                <input type="hidden" name="dst" value="$(link-orig)" />
+                <input type="hidden" name="popup" value="true" />
+            </form>
+
+            <script src="/md5.js"></script>
+            <script>
+                function doLogin() {
+                    document.sendin.username.value = document.login.username.value;
+                    document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+                    document.sendin.submit();
+                    return false;
+                }
+
+            </script>
+            $(endif)
+            <div class="login">
+                <div class="avatar">
+                    <img src="avatar.png" />
+                  </div>
+                  <h2>Login</h2>
+                  <h3><a id="alerta">Atenção!</a> Esta é uma rede privada do Grupo Queiroz de Queiroz</h3>
+                        <form class="login-form" name="login" action="$(link-login-only)" method="post" $(if chap-id)
+                            onSubmit="return doLogin()" $(endif)>
+                            <input type="hidden" name="dst" value="$(link-orig)" />
+                            <input type="hidden" name="popup" value="true" />
+                    <div class="textbox">
+                        <input name="username" type="text" value="$(username)" placeholder="Usuário"/>
+                        <img src="user.svg" id="efeito-input">
+                      </div>
+
+                      <div class="textbox">
+                        <input name="password" type="password" placeholder="Password" />
+                        <img src="password.svg" id="efeito-input">
+                      </div>
+                      
+                            <button type="submit" value="Conectar" id="botao">Conectar</button>
+                        </form>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <p class="info $(if error)alert$(endif)">
+                        $(if error == "")Faça o login para ter acesso! $(if trial == 'yes')<br />Saiba mais <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">clicando aqui</a>.$(endif)
+                        $(endif)
+
+                        $(if error)$(error)$(endif)
+</body>
+
+</html>
