@@ -154,16 +154,6 @@ body {
     .detalhe-card{
         width: 376px;
     }
-    .fita-card{
-        height: 180px;
-    }
-    .furo-card{
-        position: absolute;
-        width: 92px;
-        height: 8.06px;
-        top: 21%;
-        left: 50%;
-    }
 }
 
 h1,
