@@ -2,18 +2,17 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>To Play &#8211; Gerenciamento de Quadras</title>
-	<meta name="viewport" content="width=device-width">
-	<meta name="title" content="To Play &#8211; Gerenciamento de Quadras">
-	<meta name="description"
-		content="Veja os status das quadras.">
-	<meta name="keywords" content="Quadras, UEMG, Gerenciar, ToPlay">
-	<meta name="author" content="GIMPS">
-	<meta name="image" content="../images/logo.png">
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" media="(max-width: 450px)" href="../css/mobile.css">
-	<link rel="icon" href="images/icone.ico">
+    <meta charset="utf-8">
+    <title>To Play &#8211; Gerenciamento de Quadras</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="To Play &#8211; Gerenciamento de Quadras">
+    <meta name="description" content="Veja os status das quadras.">
+    <meta name="keywords" content="Quadras, UEMG, Gerenciar, ToPlay">
+    <meta name="author" content="GIMPS">
+    <meta name="image" content="../images/logo.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" media="(max-width: 450px)" href="../css/mobile.css">
+    <link rel="icon" href="images/icone.ico">
 </head>
 
 <body>
@@ -75,7 +74,7 @@
 
     <main>
         <h2>Quadra 01</h2>
-        <div class="area-quadra">
+        <div class="area-quadra active">
             <div class="quadra01">
                 <img src="../images/quadra.png" alt="Quadra">
                 <div class="local-quadra">
@@ -91,6 +90,23 @@
                     </div>
                 </div>
             </div>
+    </main>
+
+    <main> 
+        <div class="andamento">
+            <div class="conteudo-quadra">
+                <h2 id="status" class="jogo-indisponivel">indisponivel</h2>
+                <h3 id="proxima-partida" class="partida-indisponivel">Partida em andamento!</h3>
+                <h4 style="font-size: 15px;" class="jogos-indisponivel">Encerra em</h4>
+                <form id="tempo" name="form_main">
+                    <div class="horarios" id="hr-indisponivel">
+                        <span id="days2">00</span>:<span id="hours2">00</span>:<span id="min2">00</span>:<span
+                            id="sec2">00</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     </main>
     <div class="footer">
         <div class="footerSobre">

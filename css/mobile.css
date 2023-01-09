@@ -503,3 +503,32 @@ button:hover {
     color: var(--corPrincipal);
     font-size: 4.5rem;
   }
+ 
+  .jogo-indisponivel{
+    position: absolute !important;
+    top: -500px !important;
+    left: -100px !important;  
+  }
+
+  .partida-indisponivel{
+    position: absolute !important;
+    top: -300px !important;
+    left: 70px;  
+  } 
+ 
+  .jogos-indisponivel{
+    position: absolute !important;
+    top: -50px !important;
+    left: 120px;  
+    font-size: 5rem !important;
+  } 
+ 
+ 
+  #hr-indisponivel{
+    position: absolute !important;
+    top: 300px !important;
+    left: -20px;  
+    font-size: 7rem !important;
+    color: red;
+  } 
+ 

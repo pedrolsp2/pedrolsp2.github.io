@@ -19,7 +19,7 @@
         $data = date('H:i:s');
         
         $query_sits = #"SELECT DataPartida from prereserva WHERE DataPartida >= '" . date('Y-m-d H:i:s') . "' ORDER BY DataPartida ASC limit 1";
-        "SELECT DataPartida, HorarioPartida, FimPartida from partidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
+        "SELECT DataPartida, FimPartida, HorarioPartida from partidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
         $result_sits = $conn->prepare($query_sits);
         $result_sits->execute();
         
@@ -28,11 +28,11 @@
                 extract($row_sit);
                 $dados[] = [
                     'DataPartida' => $DataPartida,
-                    'HorarioPartida' => $HorarioPartida,
-                    'FimPartida' => $FimPartida
-                ];
+                    'FimPartida' => $FimPartida,
+                    'HorarioPartida' => $HorarioPartida
+                ]; 
                 $datafinal = "'$DataPartida  $HorarioPartida'";
-                $DuracaoPartidaFinal = "'$FimPartida'";
+                $DuracaoPartidaFinal = "'$FimPartida'"; 
             }
             $retorna = $dados;
             $status = "Indisponivel";
@@ -43,7 +43,7 @@
             $DuracaoPartidaFinal = "";
             $status = "Disponivel";
             $fraseStatus = "Sem partidas cadastradas";
-        }
+        } 
     ?>
 
 <header id="header">
@@ -82,13 +82,14 @@
     </div>
 </div>
 </main>
+
 <div class="andamento active">
        <div class="conteudo-quadra"> 
-            <h2 id="status"><?php echo $status; ?></h2>
-            <h3 id="proxima-partida">Partida em andamento!</h3>
-            <h4 style="font-size: 15px;">Encerra em</h4>
+            <h2 id="status"  class="jogo-indisponivel"><?php echo $status; ?></h2>
+            <h3 id="proxima-partida" class="partida-indisponivel">Partida em andamento!</h3>
+            <h4 style="font-size: 15px;" class="jogos-indisponivel">Encerra em</h4>
             <form id="tempo" name="form_main">
-                <div class="horarios">
+                <div class="horarios" id="hr-indisponivel">
                     <span id="days2">00</span>:<span id="hours2">00</span>:<span id="min2">00</span>:<span id="sec2">00</span>
             </form>
                 </div>
@@ -120,8 +121,7 @@
     </div>
     <script src="../js/script.js"></script>
     <script class="hide" src="js/all.min.js"></script>
-    <script type="text/javascript">
-
+    <script type="text/javascript"> 
         var horario = <?php echo $datafinal; ?>;
         let to =new Date(horario);
         var horariofim = <?php echo $DuracaoPartidaFinal;?>;

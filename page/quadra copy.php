@@ -17,26 +17,32 @@ include_once "../conexao.php";
 date_default_timezone_set('America/Sao_Paulo'); 
 $data = date('H:i:s');
 
-
-
-$query_sits = "SELECT HorarioPartida from partidas where DataPartida = '2022-12-19'";
-#"SELECT DataPartida from prereserva WHERE DataPartida >= '" . date('Y-m-d H:i:s') . "' ORDER BY DataPartida ASC limit 1";
+$query_sits = "SELECT * from par2tidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
 $result_sits = $conn->prepare($query_sits);
 $result_sits->execute();
 
 if(($result_sits) and ($result_sits->rowCount() != 0)){
     while($row_sit = $result_sits->fetch(PDO::FETCH_ASSOC)){
         extract($row_sit);
-        $dados[''];
+        $dados[] = [
+        ];
+        /*
+        $datafinal = "'$DataPartida  $HorarioPartida'";
+        $DuracaoPartidaFinal = "'$FimPartida'";*/
     }
-    $retorna = $dados;
+    $retorna = $da2dos;
+    $status = "Indisponivel";
+    $fraseStatus = "Proxima partida em";
 }else{
-    $retorna = 0;
+    $retorna = "";
+$datafinal = "";
+    $DuracaoPartidaFinal = "";
+    $status = "Disponivel";
+    $fraseStatus = "Sem partidas cadastradas";
 }
-
 echo json_encode($retorna);
-       
-    ?>
+echo json_encode($DuracaoPartidaFinal);
+?>
 
 <header id="header">
     <div class="logo"></div>
