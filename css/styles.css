@@ -1,23 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-
 :root {
   --corPrincipal: #085e3b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: 'Poppins', sans-serif;
+}
+.sairr{
+    display: none !important;
+    visibility: hidden !important;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif, 'Calibri', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: justify;
   scroll-behavior: smooth;
 }
 
+.inicio {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/back.jpg) fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-top: 10rem;
+}
 body {
   background-image: url('../images/background.png');
   background-attachment: fixed;
   backface-visibility: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #00000075;
+  backdrop-filter: blur(12.5px);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--corPrincipal);
+  border-radius: 10px;
 }
 
 /*****************COMEÇO MENU*********************/
@@ -46,9 +81,14 @@ header {
   transition: 0.5s;
   z-index: 100000;
   top: 0;
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  color: #fff;
+}
+
+.header-inicio {
+  position: absolute;
+  top: 0;
+  background-color: transparent !important;
+  color: var(--corPrincipal) !important;
 }
 
 .logo {
@@ -60,6 +100,117 @@ header {
   position: relative;
   cursor: pointer;
   z-index: 10000000;
+}
+
+
+section {
+  padding: 2rem;
+}
+
+section h1 {
+  font-size: 3rem;
+  text-align: left;
+  margin-bottom: 1.1rem;
+  color: #00a060;
+}
+
+section h3 {
+  color: #fff;
+  font-weight: normal;
+}
+
+section input {
+  height: 3rem;
+  width: 40rem;
+  text-align: left;
+  padding-left: 8px;
+}
+
+
+section input:nth-child(1) {
+  position: absolute;
+  margin-top: 1px;
+  float: left;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
+
+section label {
+  color: rgb(151, 151, 151);
+}
+
+.sair {
+  display: none;
+  visibility: hidden;
+  transition: 300ms;
+  color: #fff;
+}
+
+.msg-ip {
+  display: none;
+  visibility: hidden;
+}
+
+section button {
+  background-color: var(--corPrincipal);
+  padding: 0.1rem;
+  text-align: center;
+  margin-top: 15rem;
+  position: absolute;
+  border-radius: 10px;
+  width: 10rem;
+  transition: 300ms;
+}
+
+section input:nth-child(2) {
+  position: absolute;
+  width: 10rem;
+  margin-top: 15rem;
+  background-color: var(--corPrincipal);
+  text-align: center;
+  color: #fff;
+  padding-right: 1rem;
+  cursor: pointer;
+  transition: 300ms;
+  float: left;
+}
+
+
+section input:nth-child(4) {
+  display: none;
+  visibility: hidden;
+}
+
+.hover {
+  background-color: #a11;
+  /* transform: scale(110%);
+ transition: 300ms;  */
+}
+
+span#msg {
+  position: relative;
+  border: 1px slod red;
+  float: left;
+  margin-top: -5rem;
+  width: 60%;
+  height: 15rem;
+}
+
+span#att {
+  position: relative;
+  border: 1px slod red;
+  float: left;
+  width: 60%;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  position: absolute;
+  padding: 30px 40px;
+  background: transparent !important;
+  color: transparent !important;
 }
 
 .menu {
@@ -305,8 +456,8 @@ main h4 {
   text-decoration: none;
   padding: 2px;
   color: var(--corPrincipal);
-  white-space: nowrap;
-  font-size: 5rem;
+  white-space: nowrap; 
+  transition: 400ms;
 }
 
 .area-form {
@@ -379,7 +530,8 @@ h4 {
   ;
 }
 
-input,select  {
+input,
+select {
   width: 250px;
   height: 40px;
   border-radius: 10px;
@@ -395,7 +547,7 @@ input,select  {
   -webkit-backdrop-filter: blur(9.2px);
 }
 
-select-selected{
+select-selected {
   background-color: red;
 }
 
@@ -452,6 +604,10 @@ button:hover {
 
 .quadra01 img {
   height: 90vh;
+}
+.jogo-indisponivel{
+  color: var(--corPrincipal);
+  text-align: center;
 }
 
 .conteudo-quadra {
@@ -741,6 +897,12 @@ button:hover {
   animation-delay: 0s, 100ms;
 }
 
+.top img:hover{
+  transform: scale(105%);
+  transform: rotate(360deg) ;
+  transition: 400ms;
+}
+
 .alert.error .inner {
   border: 1px solid rgb(238, 211, 215);
   background-color: rgb(242, 222, 222);
@@ -808,16 +970,17 @@ button:hover {
 .manutencao img {
   width: 100%;
 }
+
 .fim {
   animation: alert 1s linear infinite alternate;
 }
 
 @keyframes fim {
   0% {
-      background: #112
+    background: #112
   }
 
   100% {
-      background: #a11;
+    background: #a11;
   }
 }

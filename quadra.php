@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>To Play &#8211; Quadras</title>
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" media="(max-width: 450px)" href="../css/mobile.css">
-	<link rel="icon" href="images/icone.ico">
+    <meta charset="utf-8">
+    <title>To Play &#8211; Gerenciamento de Quadras</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="To Play &#8211; Gerenciamento de Quadras">
+    <meta name="description" content="Veja os status das quadras.">
+    <meta name="keywords" content="Quadras, UEMG, Gerenciar, ToPlay">
+    <meta name="author" content="GIMPS">
+    <meta name="image" content="images/logo.png">
+	<meta name="theme-color" content="#085e3b">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" media="(max-width: 450px)" href="css/mobile.css">
+    <link rel="icon" href="images/icone.ico">
 </head>
 
 <body> 	
@@ -16,10 +25,9 @@
         include_once "conexao.php";
 
         date_default_timezone_set('America/Sao_Paulo'); 
-        $data = date('H:i:s');
+        $data = date('H:i:s'); 
         
-        $query_sits = #"SELECT DataPartida from prereserva WHERE DataPartida >= '" . date('Y-m-d H:i:s') . "' ORDER BY DataPartida ASC limit 1";
-        "SELECT DataPartida, FimPartida, HorarioPartida from partidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
+        $query_sits = "SELECT DataPartida, FimPartida, HorarioPartida from partidas WHERE DataPartida >= '" . date('Y-m-d') . "' and HorarioPartida > '" . date('H:i:s') . "' order by HorarioPartida ASC limit 1";
         $result_sits = $conn->prepare($query_sits);
         $result_sits->execute();
         
@@ -47,28 +55,65 @@
     ?>
 
 <header id="header">
-    <div class="logo"></div>
+		<div class="logo"></div>
 
-    <nav id="nav">
-        
-        <button aria-label="Abrir Menu" id="btn-celular" aria-expanded="" aria-controls="menu" aria-haspopup="true">Menu
-            <span id="icon-menu"></span>
-        </button> 
-        <ul class="menu" role="menu">
-        <li><a href="../inicio.html">Home</a></li>
-				<li><a href="../historico.html">Historico</a></li> 
-				<li><a href="../partida.html">Partida</a></li>
-				<li><a href="../quadra.php">Quadras</a></li> 
-        </ul>
+		<nav id="nav">
 
-    </nav>
-</header>
+			<button aria-label="Abrir Menu" id="btn-celular" aria-expanded="" aria-controls="menu"
+				aria-haspopup="true">Menu
+				<span id="icon-menu"></span>
+			</button>
+
+			<ul class="menu" role="menu">
+				<li><a href="inicio.html">Home</a></li> 
+				<li><a href="partida.html">Pré Reserva</a></li>
+				<li><a href="quadra.php">Status da Quadra</a></li>
+			</ul>
+
+		</nav>
+	</header>
+
+	<div class="second-nave">
+		<div class="second-menu">
+			<a href="inicio.html" id="icon-menu-inferior">
+				<div class="second-item left">
+					<i class="fa-solid fa-house"></i>
+				</div>
+			</a>
+
+			<a href="historico.html" id="icon-menu-inferior">
+				<div class="second-item">
+					<i class="fa-solid fa-magnifying-glass-chart"></i>
+				</div>
+			</a>
+
+			<div class="second-item" id="second-logo"><img src="images/logo.png"></div>
+
+			<a href="" id="icon-menu-inferior">
+				<div class="second-item">
+				</div>
+			</a>
+
+			<a href="partida.html" id="icon-menu-inferior">
+				<div class="second-item">
+					<i class="fa-solid fa-user-plus"></i>
+				</div>
+			</a>
+
+			<a href="quadra.php" id="icon-menu-inferior">
+				<div class="second-item rigth ativo">
+					<i class="fa-solid fa-futbol"></i>
+				</div>
+			</a>
+
+		</div>
+	</div>
 
 <main>  
 <h2>Quadra 01</h2>
 <div class="area-quadra">
     <div class="quadra01">
-        <img src="../images/quadra.png" alt="Quadra">
+        <img src="images/quadra.png" alt="Quadra">
         <div class="local-quadra">
        <div class="conteudo-quadra"> 
             <h2 id="status"><?php echo $status; ?></h2>
@@ -83,9 +128,10 @@
 </div>
 </main>
 
-<div class="andamento active">
+<div class="local-quadra-mob active"></div>
+<div class="andamento active"> 
        <div class="conteudo-quadra"> 
-            <h2 id="status"  class="jogo-indisponivel"><?php echo $status; ?></h2>
+            <h2 id="status"  class="jogo-indisponivel">Indisponivel</h2>
             <h3 id="proxima-partida" class="partida-indisponivel">Partida em andamento!</h3>
             <h4 style="font-size: 15px;" class="jogos-indisponivel">Encerra em</h4>
             <form id="tempo" name="form_main">
@@ -119,9 +165,10 @@
         <br>
     </div>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
     <script class="hide" src="js/all.min.js"></script>
     <script type="text/javascript"> 
+    
         var horario = <?php echo $datafinal; ?>;
         let to =new Date(horario);
         var horariofim = <?php echo $DuracaoPartidaFinal;?>;
@@ -144,14 +191,13 @@
                     document.querySelector('.local-quadra').classList.remove('active');
                     document.querySelector('.andamento').classList.replace('Nactive','active');
                     clearInterval(interval);
-                    document.querySelector('.andamento').classList.add('alert');
-                    obj.func();
+                    location.reload();
                     }
 		}
         
         var obj = {};
             obj.func = function() {
-            setTimeout(function(){ location.reload(); }, 2000);
+            setTimeout(function(){ location.reload(); }, 1);
             
         };
 		function update()
@@ -174,6 +220,7 @@
                     crono.func();
                     document.querySelector('.local-quadra').classList.add('active');
                     document.querySelector('.andamento').classList.replace('active','Nactive');
+                    document.querySelector('.local-quadra-mob').classList.replace('active','Nactive');
 			    }
 		}
 		

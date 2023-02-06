@@ -6,19 +6,22 @@
 	<title>To Play &#8211; Gerenciamento de Quadras</title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="title" content="To Play &#8211; Gerenciamento de Quadras">
-	<meta name="description"
-		content="Gerencie seu centro esportivo com facilidade.">
+	<meta name="description" content="Gerencie seu centro esportivo com facilidade.">
 	<meta name="keywords" content="Quadras, UEMG, Gerenciar, ToPlay">
 	<meta name="author" content="GIMPS">
-	<meta name="image" content="../images/logo.png">
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" media="(max-width: 450px)" href="../css/mobile.css">
+	<meta name="image" content="images/logo.png"> 
+	<meta name="theme-color" content="#085e3b">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" media="(max-width: 450px)" href="css/mobile.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<link rel="icon" href="images/icone.ico">
 </head>
 
 <body>
-	<header id="header">
-		<div class="logo"></div>
+	<header id="header" class="header-inicio">
+		<div class="logo"><a href="#"></a></div>
 
 		<nav id="nav">
 
@@ -28,24 +31,53 @@
 			</button>
 
 			<ul class="menu" role="menu">
-				<li><a href="../inicio.html">Home</a></li>
-				<li><a href="../historico.html">Historico</a></li>
-				<li><a href="../partida.html">Partida</a></li>
-				<li><a href="../quadra.html">Quadras</a></li>
+				<li><a href="inicio.html">Home</a></li> 
+				<li><a href="partida.html">Pré Reserva</a></li>
+				<li><a href="quadra.php">Status da Quadra</a></li>
 			</ul>
 
 		</nav>
 	</header>
+	<div id="msg-ip" class="sairr">
+		<h1>Obrigado! Assim que tivermos atualiações lhe enviaremos.</h1>
+	</div>
+	<div class="inicio"> 
+		<section>
+			<span id="msg">
+				<h1>O sistema ideal para você
+					gerenciar seu centro esportivo!</h1>
 
+				<h3>Com o propósito de administrar a locação de quadras e centros esportivos, a ToPlay quer fazer isso
+					de modo intuitivo e simples</h3>
+			</span>
+			<span id="att">
+				<label for="email">Deseja ter acesso às novas atualizações?
+					<input type="email" name="email" id="email"
+						placeholder="Digite seu endereço de e-mail para ter acesso"/>
+				</label>
+				<input type="button" value="Enviar" onclick="mOver()" id="bt"> 
+				<button class="sair" id="buts">        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+					x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;"
+					xml:space="preserve">
+					<path fill="#fff"
+						d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+						<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25"
+							to="360 25 25" dur="0.6s" repeatCount="indefinite" />
+					</path>
+				</svg></button>
+				<input type="button" value="Desejo ter acesso"  id="bt2" onclick="mOver2()"> 
+			</span>
+		</section>
+	</div>  
 	<div class="second-nave">
 		<div class="second-menu">
-			<a href="../inicio.html" id="icon-menu-inferior">
+			<a href="inicio.html" id="icon-menu-inferior">
 				<div class="second-item ativo left">
 					<i class="fa-solid fa-house"></i>
 				</div>
 			</a>
 
-			<a href="../historico.html" id="icon-menu-inferior">
+			<a href="historico.html" id="icon-menu-inferior">
 				<div class="second-item">
 					<i class="fa-solid fa-magnifying-glass-chart"></i>
 				</div>
@@ -58,13 +90,13 @@
 				</div>
 			</a>
 
-			<a href="../partida.html" id="icon-menu-inferior">
+			<a href="partida.html" id="icon-menu-inferior">
 				<div class="second-item">
 					<i class="fa-solid fa-user-plus"></i>
 				</div>
 			</a>
 
-			<a href="../quadra.html" id="icon-menu-inferior">
+			<a href="quadra.php" id="icon-menu-inferior">
 				<div class="second-item rigth">
 					<i class="fa-solid fa-futbol"></i>
 				</div>
@@ -78,7 +110,7 @@
 			<img src="images/msgbemvindo.png" id="bem-vindo">
 		</div>
 
-		<h2 class="reveal">Sobre o sistema.</h2>
+		<h2 class="reveal">Sobre o sistema.</h2> 
 
 		<p>&nbsp &nbsp Atualmente o número de quadras esportivas cresceram de uma forma considerável, com isso, a
 			variedade de esportes aumentaram. Pensando nisso, desenvolvemos um software para gerenciar as partidas de
@@ -295,12 +327,45 @@
 		</div>
 	</div>
 
-	<a href="#" class="top">&#8593;</a>
+	<a href="#" class="top">
+		<img src="images/up.png" alt="Up">
+	</a>
 
 
-	<script src="../js/script.js"></script>
-	<script src="../js/js.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/js.js"></script>
 	<script class="hide" src="js/all.min.js"></script>
+	<script>
+
+function mOver()
+{ 
+	 const btns = document.getElementById('buts')
+	   btns.classList.toggle('sair')
+
+	   	setTimeout(function(){
+		document.getElementById('buts').classList.add('sair') 
+			document.getElementById('bt').value = "Obrigado!" 
+		},1000);
+
+		setTimeout(function(){
+			document.getElementById('bt').value = "Enviar!" 
+		},3000);
+
+}
+
+function mOver2()
+{ 
+	 const btns = document.getElementById('msg-ip')
+	   btns.classList.replace('sairr','slide-in-top')
+
+	   	setTimeout(function(){
+			const btns = document.getElementById('msg-ip')
+	   btns.classList.replace('slide-in-top','slide-out-top')
+		},3500);
+
+
+}
+	</script>
 
 </body>
 
