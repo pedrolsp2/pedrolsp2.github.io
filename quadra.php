@@ -36,10 +36,9 @@
                 extract($row_sit);
                 $dados[] = [
                     'DataPartida' => $DataPartida,
-                    'FimPartida' => $FimPartida,
-                    'HorarioPartida' => $HorarioPartida
+                    'FimPartida' => $FimPartida
                 ]; 
-                $datafinal = "'$DataPartida  $HorarioPartida'";
+                $datafinal = "'$DataPartida'";
                 $DuracaoPartidaFinal = "'$FimPartida'"; 
             }
             $retorna = $dados;
@@ -51,7 +50,7 @@
             $DuracaoPartidaFinal = "";
             $status = "Disponivel";
             $fraseStatus = "Sem partidas cadastradas";
-        } 
+        }
     ?>
 
 <header id="header">
@@ -132,8 +131,7 @@
 <div class="andamento active"> 
        <div class="conteudo-quadra"> 
             <h2 id="status"  class="jogo-indisponivel">Indisponível</h2>
-            <h3 id="proxima-partida" class="partida-indisponivel">Partida em andamento!</h3>
-            <h4 style="font-size: 15px;" class="jogos-indisponivel">Encerra em</h4>
+            <h3 id="proxima-partida" class="partida-indisponivel">Partida em andamento!<br>Encerra em</h3> 
             <form id="tempo" name="form_main">
                 <div class="horarios" id="hr-indisponivel">
                     <span id="days2">00</span>:<span id="hours2">00</span>:<span id="min2">00</span>:<span id="sec2">00</span>
@@ -170,65 +168,66 @@
     <script type="text/javascript"> 
     
         var horario = <?php echo $datafinal; ?>;
-        let to =new Date(horario);
         var horariofim = <?php echo $DuracaoPartidaFinal;?>;
-		let to2 =new Date(horariofim);
-            var crono = {};
-                crono.func = function update2(){
-                let from2 =new Date();
-                    diff2=to2-from2;
-                    if(diff2>0){
-                    let days2=setTwoDigit(Math.floor(diff2/1000/60/60/24)),
-                    hours2=setTwoDigit(Math.floor(diff2/1000/60/60)%24),
-                    min2=setTwoDigit(Math.floor(diff2/1000/60)%60),
-                    sec2=setTwoDigit(Math.floor(diff2/1000)%60)
-                    document.querySelector('#days2').innerText=days2
-                    document.querySelector('#hours2').innerText=hours2
-                    document.querySelector('#min2').innerText=min2
-                    document.querySelector('#sec2').innerText=sec2
-                } else{
-                    clearInterval(interval);
-                    document.querySelector('.local-quadra').classList.remove('active');
-                    document.querySelector('.andamento').classList.replace('Nactive','active');
-                    clearInterval(interval);
-                    location.reload();
-                    }
-		}
-        
+        let to = new Date(horario);
+		let to2 = new Date(horariofim); 
+        var crono = {};
         var obj = {};
-            obj.func = function() {
-            setTimeout(function(){ location.reload(); }, 1);
             
-        };
-		function update()
+        function update()
         {
-            let from =new Date();
-				diff=to-from;
-				if(diff>0)
-                {
-                    let days=setTwoDigit(Math.floor(diff/1000/60/60/24)),
-                    hours=setTwoDigit(Math.floor(diff/1000/60/60)%24),
-                    min=setTwoDigit(Math.floor(diff/1000/60)%60),
-                    sec=setTwoDigit(Math.floor(diff/1000)%60)
-                    document.querySelector('#days').innerText=days
-                    document.querySelector('#hours').innerText=hours
-                    document.querySelector('#min').innerText=min
-                    document.querySelector('#sec').innerText=sec
-			    }
-                else
-                {
-                    crono.func();
-                    document.querySelector('.local-quadra').classList.add('active');
-                    document.querySelector('.andamento').classList.replace('active','Nactive');
-                    document.querySelector('.local-quadra-mob').classList.replace('active','Nactive');
-			    }
+            let from = new Date();
+            let diff=to-from;
+            if(diff>0)
+            {
+                let days=setTwoDigit(Math.floor(diff/1000/60/60/24)),
+                hours=setTwoDigit(Math.floor(diff/1000/60/60)%24),
+                min=setTwoDigit(Math.floor(diff/1000/60)%60),
+                sec=setTwoDigit(Math.floor(diff/1000)%60)
+                document.querySelector('#days').innerText=days
+                document.querySelector('#hours').innerText=hours
+                document.querySelector('#min').innerText=min
+                document.querySelector('#sec').innerText=sec
+            }
+            else
+            {
+                document.querySelector('.local-quadra').classList.add('active');
+                document.querySelector('.andamento').classList.replace('active','Nactive');
+                document.querySelector('.local-quadra-mob').classList.replace('active','Nactive');
+                crono.func();
+            }
 		}
+                 crono.func = function update2(){
+                 let from2 =new Date();
+                     diff2=to2-from2;
+                     if(diff2>0){
+                     let days2=setTwoDigit(Math.floor(diff2/1000/60/60/24)),
+                     hours2=setTwoDigit(Math.floor(diff2/1000/60/60)%24),
+                     min2=setTwoDigit(Math.floor(diff2/1000/60)%60),
+                     sec2=setTwoDigit(Math.floor(diff2/1000)%60)
+                     document.querySelector('#days2').innerText=days2
+                     document.querySelector('#hours2').innerText=hours2
+                     document.querySelector('#min2').innerText=min2
+                     document.querySelector('#sec2').innerText=sec2
+                 } else{
+                     clearInterval(interval);
+                      document.querySelector('.local-quadra').classList.remove('active');
+                     document.querySelector('.andamento').classList.replace('Nactive','active');
+                      clearInterval(interval);
+                      location.reload();
+                     }
+		 }
+        
+             obj.func = function() {
+             setTimeout(function(){ location.reload(); }, 1);
+            
+         };
 		
-		let interval=setInterval(update,1000)
+		 let interval=setInterval(update,1000)
 
-		function setTwoDigit(argument) {
-			return argument>9?argument:'0'+argument;
-		}
+		 function setTwoDigit(argument) {
+		 	return argument>9?argument:'0'+argument;
+		 }
 
     </script>
 

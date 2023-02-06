@@ -42,7 +42,7 @@
 		<h1>Obrigado! Assim que tivermos atualiações lhe enviaremos.</h1>
 	</div>
 	<div class="inicio"> 
-		<section>
+		<section class="slide-in-left">
 			<span id="msg">
 				<h1>O sistema ideal para você
 					gerenciar seu centro esportivo!</h1>
@@ -67,8 +67,14 @@
 				</svg></button>
 				<input type="button" value="Desejo ter acesso"  id="bt2" onclick="mOver2()"> 
 			</span>
-		</section>
+		</section> 
 	</div>  
+	<div class="sairr" id="pop-vaz">
+	<div class="popUpCampo" >
+		<h2>Campo Vazio!</h2>
+		<p>Para receber nossas atualizações, favor preencha o campo de e-mail corretamente.</p>
+	</div>
+</div>
 	<div class="second-nave">
 		<div class="second-menu">
 			<a href="inicio.html" id="icon-menu-inferior">
@@ -339,6 +345,22 @@
 
 function mOver()
 { 
+	let textBoxEmail = document.getElementById('email');
+
+	if(textBoxEmail.value == ""){
+
+		textBoxEmail.style.animationName = 'alertaVazio';
+		textBoxEmail.style.animationDuration = '3s';
+
+		let btns = document.getElementById('pop-vaz')
+	   btns.classList.replace('sairr','slide-in-top')
+
+	   	setTimeout(function(){
+			let btns = document.getElementById('pop-vaz')
+	   btns.classList.replace('slide-in-top','sairr')
+		},3500);
+
+	}else{
 	 const btns = document.getElementById('buts')
 	   btns.classList.toggle('sair')
 
@@ -350,11 +372,26 @@ function mOver()
 		setTimeout(function(){
 			document.getElementById('bt').value = "Enviar!" 
 		},3000);
+	}
 
 }
 
 function mOver2()
-{ 
+{
+	 let textBoxEmail = document.getElementById('email');
+
+if(textBoxEmail.value == ""){
+   setTimeout(function(){ 
+			document.getElementById('bt2').value = "Preencha o email!" 
+		},1);
+
+		setTimeout(function(){
+			document.getElementById('bt2').value = "Desejo ter acesso" 
+		},3000);
+	textBoxEmail.style.animationName = 'alertaVazio';
+	textBoxEmail.style.animationDuration = '3s';
+
+}else{
 	 const btns = document.getElementById('msg-ip')
 	   btns.classList.replace('sairr','slide-in-top')
 
@@ -363,7 +400,8 @@ function mOver2()
 	   btns.classList.replace('slide-in-top','slide-out-top')
 		},3500);
 
-
+		document.getElementById('email').value = "";
+	}
 }
 	</script>
 

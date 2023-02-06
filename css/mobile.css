@@ -106,7 +106,7 @@ main {
 .inicio{    
     width: 265%;
     height: 250vh;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/back.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/back.webp);
     background-size: cover;
   }
   
@@ -571,11 +571,11 @@ button:hover {
   }
   .local-quadra-mob {
     width: 53rem;
-    height: 77rem;
+    height: 60rem;
     border-radius: 80px;
     background: rgba(255, 255, 255, 0.616) center;
     position: absolute;
-    top: 95%;
+    top: 105%;
     left: 130%;
     transform: translate(-50%, -50%);
     z-index: 3;
@@ -609,7 +609,7 @@ button:hover {
    
 
 #status{
-    font-size: 9rem;
+    font-size: 7rem;
     color: var(--corPrincipal) !important;
 }
 
@@ -627,28 +627,28 @@ button:hover {
  
   .jogo-indisponivel{
     position: absolute !important;
-    top: -500px !important;
-    left: -100px !important;   
+    top: -300px !important;
+    left: -10px !important; 
   }
 
   .partida-indisponivel{
     position: absolute !important;
-    top: -300px !important;
-    left: 70px;  
+    top: 0px !important;
+    left: 70px;
   } 
  
   .jogos-indisponivel{
     position: absolute !important;
-    top: -50px !important;
-    left: 120px;  
-    font-size: 10rem !important;
+    top: 20px !important;
+    left: 155px;
+    font-size: 5rem !important;
   } 
  
  
   #hr-indisponivel{
     position: absolute !important;
-    top: 300px !important;
-    left: -20px;  
+    top: 500px !important;
+    left: 5px;
     font-size: 7rem !important;
     color: var(--corPrincipal) !important;
   } 
