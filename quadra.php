@@ -131,7 +131,7 @@
 <div class="local-quadra-mob active"></div>
 <div class="andamento active"> 
        <div class="conteudo-quadra"> 
-            <h2 id="status"  class="jogo-indisponivel">Indisponivel</h2>
+            <h2 id="status"  class="jogo-indisponivel">Indisponível</h2>
             <h3 id="proxima-partida" class="partida-indisponivel">Partida em andamento!</h3>
             <h4 style="font-size: 15px;" class="jogos-indisponivel">Encerra em</h4>
             <form id="tempo" name="form_main">
